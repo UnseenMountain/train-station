@@ -55,17 +55,18 @@ database.ref().on("child_added", function (childSnapshot) {
   console.log(empStart);
   console.log(empMin);
 
-  var empStartThis = moment.unix(empStart).format("00:00.00")
+  // var empStartThis = moment.unix(empStart).format("00:00.00")
   
 
   var newRow = $("<tr>").append(
     $("<td>").text(empName),
     $("<td>").text(empDestination),
-    $("<td>").text(empStartThis),
+    // $("<td>").text(empStartThis),
     $("<td>").text(empStart),
     $("<td>").text(empMin)
   );
-
+  
   // Append the new row to the table
   $("#train-table > tbody").append(newRow);
+  
 })

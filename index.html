@@ -18,14 +18,14 @@
 
     <div class="jumbotron" style="background-color: black; color: white">
         <h1 class="text-center">Train time station</h1>
-        <h3 class="text-center">A Comprehensive Directory of train stuff</h3>
+        <h3 class="text-center">train stuff to get to were you want to go</h3>
     </div>
     <div id="container">
         <div class="row">
 
             <div class="col-md-12">
 
-                <!-- Current Employees-->
+                <!-- Current trains-->
                 <div class="card mb-4">
                     <div class="card-header" style="background-color: turquoise;">Train Info</div>
                     <div class="card-body">
@@ -34,12 +34,14 @@
                                 <tr>
                                     <th scope="col">Train name</th>
                                     <th scope="col">Destination</th>
-                                    <th scope="col">Frequence in min</th>
-                                    <th scope="col">Next arrival</th>
-                                    <th scope="col">Minutes away</th>
+                                    <th scope="col">First Train time</th>
+                                    <th scope="col">Frequency in min</th>
+                                    <!-- <th scope="col">Minutes away</th> -->
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                <!-- <button onclick="myFunction()">delete searches here</button> -->
                             </tbody>
                         </table>
                     </div>
@@ -85,7 +87,13 @@
 
 
     <script src="javascript/java.js"></script>
+<script>
+function myFunction() {
+    var row = document.getElementById("myRow");
+    row.deleteCell(0);
+  }
 
+</script>
 </body>
 
 </html>
