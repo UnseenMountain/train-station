@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
   
     <title>trian station</title>
 </head>
@@ -36,7 +36,7 @@
                                     <th scope="col">Destination</th>
                                     <th scope="col">First Train time</th>
                                     <th scope="col">Frequency in min</th>
-                                  
+                                    <!-- <th scope="col">Time to Arrival</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,14 +66,20 @@
                                 <label for="destination-input">Destination</label>
                                 <input class="form-control" id="destination-input" placeholder="Sodor" type="text">
                             </div>
-                            <div class="form-group">
-                                <label for="start-input">First train time</label>
-                                <input class="form-control" id="start-input" placeholder="00:00:00" type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="min-input">Frequence in min</label>
-                                <input class="form-control" id="min-input" type="text">
-                            </div>
+                            <div class="form-group col-sm-4">
+                                <label for="train-departure">First Departure (24hr format)</label>
+                                <input type="number" class="form-control" id="start-input" placeholder="0800" required/>
+                                <div class="invalid-feedback">
+                                  Please provide a Train's First Departure Time.
+                                </div>
+                              </div>
+                            <div class="form-group col-sm-4">
+                                <label for="train-frequency">Frequency (minutes)</label>
+                                <input type="number" class="form-control" id="min-input" min="10" max="720" placeholder="30" required/>
+                                <div class="invalid-feedback">
+                                  Please provide a Train Frequency.
+                                </div>
+                              </div>
                             <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
                         </form>
 
